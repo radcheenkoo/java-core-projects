@@ -10,7 +10,7 @@ public class CafeDB {
     public void addDish(String name, Double price){
 
         if (menu.containsKey(name)){
-            System.err.println("Така страва вже існує.");
+            System.err.println("Such a dish already exists.");
         }else {
             menu.put(name, price);
         }
@@ -22,7 +22,7 @@ public class CafeDB {
             menu.remove(oldName);
             menu.put(newName, price);
         }else {
-            System.err.println("Такого запису не існує.");
+            System.err.println("There is no such record.");
         }
     }
 
@@ -31,18 +31,22 @@ public class CafeDB {
         if(menu.containsKey(name)){
             menu.remove(name);
         }else {
-            System.err.println("Запису з таким іменем: " + name +  " немає");
+            System.err.println("Entry with this name: " + name +  " none");
         }
     }
 
-    public Double getDishByName(String name){
+    public Double getDishPriceByName(String name){
 
         if (menu.containsKey(name)){
             return menu.get(name);
         }else {
-            System.err.println("Запису з таким іменем: " + name +  " немає");
+            System.err.println("Entry with this name: " + name +  " none");
             return null;
         }
+    }
+
+    public boolean existsDishByName(String name){
+        return menu.containsKey(name);
     }
 
     public Map<String, Double> getMenu(){
