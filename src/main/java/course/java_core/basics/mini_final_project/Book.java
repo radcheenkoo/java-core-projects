@@ -1,4 +1,4 @@
-package course.java_core.basics.final_project;
+package course.java_core.basics.mini_final_project;
 
 import java.util.Comparator;
 import java.util.Objects;

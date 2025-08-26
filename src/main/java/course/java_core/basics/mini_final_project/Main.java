@@ -1,4 +1,4 @@
-package course.java_core.basics.final_project;
+package course.java_core.basics.mini_final_project;
 
 public class Main {
     public static void main(String[] args) {

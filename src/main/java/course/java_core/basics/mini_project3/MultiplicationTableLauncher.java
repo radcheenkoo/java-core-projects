@@ -1,4 +1,4 @@
-package course.java_core.basics.project3;
+package course.java_core.basics.mini_project3;
 
 public class MultiplicationTableLauncher {
 

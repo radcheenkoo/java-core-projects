@@ -1,4 +1,4 @@
-package course.java_core.basics.project4;
+package course.java_core.basics.mini_project4;
 
 import java.util.HashMap;
 import java.util.Map;

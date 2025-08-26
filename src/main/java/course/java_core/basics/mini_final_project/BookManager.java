@@ -1,6 +1,5 @@
-package course.java_core.basics.final_project;
+package course.java_core.basics.mini_final_project;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 public class BookManager {

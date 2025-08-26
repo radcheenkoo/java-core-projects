@@ -1,4 +1,4 @@
-package course.java_core.basics.project1;
+package course.java_core.basics.mini_project1;
 
 import java.util.Scanner;
 

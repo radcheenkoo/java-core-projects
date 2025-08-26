@@ -1,4 +1,4 @@
-package course.java_core.basics.project5;
+package course.java_core.basics.mini_project5;
 
 import java.util.List;
 import java.util.Scanner;
