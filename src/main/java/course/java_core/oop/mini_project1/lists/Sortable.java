@@ -1,8 +1,10 @@
 package course.java_core.oop.mini_project1.lists;
 
-@FunctionalInterface
-public interface Sortable<T> {
+import course.java_core.oop.mini_project1.lists.hotel_room_list.HotelRoomArrayList;
 
-    abstract T[] sort();
 
+public interface Sortable {
+
+    HotelRoomArrayList sortFromMinPriceToMax();
+    HotelRoomArrayList sortFromMaxPriceToMin();
 }

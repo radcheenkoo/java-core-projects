@@ -4,21 +4,39 @@ import course.java_core.oop.mini_project1.lists.List;
 import course.java_core.oop.mini_project1.lists.Sortable;
 import course.java_core.oop.mini_project1.model.HotelRoom;
 
-public class HotelArrayList implements List<HotelRoom>, Sortable<HotelRoom> {
+public class HotelRoomArrayList implements List<HotelRoom>, Sortable{
 
-    private HotelRoom[] hotelRooms = new HotelRoom[10];
+    private HotelRoom[] hotelRooms = new HotelRoom[5];
     private int size = 0;
 
     @Override
     public void add(HotelRoom hotelRoom) {
 
         if (size == hotelRooms.length){
-            hotelRooms = createLargerArray();
+            System.out.println("Вільні кімнати закінчились.");
+        }else{
+
+            hotelRooms[size] = hotelRoom;
+            size++;
+
         }
 
-        hotelRooms[size] = hotelRoom;
-        size++;
 
+    }
+    @Override
+    public int addAndReturnIndex(HotelRoom hotelRoom) {
+
+        if (size == hotelRooms.length){
+            System.out.println("Вільні кімнати закінчились.");
+        }else {
+
+            hotelRooms[size] = hotelRoom;
+            size++;
+
+        }
+
+
+        return size;
     }
 
     @Override
@@ -54,7 +72,12 @@ public class HotelArrayList implements List<HotelRoom>, Sortable<HotelRoom> {
     }
 
     @Override
-    public HotelRoom[] sort() {
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public HotelRoom[] sortFromMinPriceToMax() {
 
 
         HotelRoom[] sortedHotelRooms = new HotelRoom[hotelRooms.length];
@@ -80,17 +103,28 @@ public class HotelArrayList implements List<HotelRoom>, Sortable<HotelRoom> {
         return sortedHotelRooms;
     }
 
+    @Override
+    public HotelRoom[] sortFromMaxPriceToMin() {
+        HotelRoom[] sortedHotelRooms = new HotelRoom[hotelRooms.length];
 
-    // ------- helpers --------
 
-
-    private HotelRoom[] createLargerArray(){
-        HotelRoom[] newArray = new HotelRoom[hotelRooms.length*2];
-
-        for (int i = 0; i < hotelRooms.length; i++) {
-            newArray[i] = hotelRooms[i];
+        for (int i = 0; i < hotelRooms.length; i++){
+            sortedHotelRooms[i] = hotelRooms[i];
         }
 
-        return newArray;
+        for (int i = 0; i < sortedHotelRooms.length - 1; i++) {
+            for (int j = 0; j < sortedHotelRooms.length - i - 1; j++) {
+                if (sortedHotelRooms[j].compareTo(sortedHotelRooms[j+1]) < 0){
+
+                    HotelRoom newHotelRoom = sortedHotelRooms[j];
+                    sortedHotelRooms[j] = sortedHotelRooms[j+1];
+                    sortedHotelRooms[j+1] = newHotelRoom;
+                }
+            }
+        }
+
+        return sortedHotelRooms;
+
     }
+
 }

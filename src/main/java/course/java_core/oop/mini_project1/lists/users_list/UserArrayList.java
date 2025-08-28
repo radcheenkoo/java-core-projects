@@ -18,6 +18,17 @@ public class UserArrayList implements List<User> {
         size++;
     }
 
+    @Override
+    public int addAndReturnIndex(User user) {
+        if (size == userArrayList.length){
+            userArrayList = createLargerArrayList();
+        }
+
+        userArrayList[size] = user;
+        size++;
+
+        return size;
+    }
 
 
     @Override
@@ -44,6 +55,11 @@ public class UserArrayList implements List<User> {
         userArrayList[size] = null;
         size--;
 
+    }
+
+    @Override
+    public int size() {
+        return size;
     }
 
     //--------- helpers ---------
