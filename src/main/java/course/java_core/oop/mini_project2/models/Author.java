@@ -1,14 +1,14 @@
 package course.java_core.oop.mini_project2.models;
 
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
 public final class Author extends User {
 
     private List<Book> writtenBooks;
-    private LocalDateTime dateOfBirth;
+    private LocalDate dateOfBirth;
 
 
 
@@ -41,11 +41,11 @@ public final class Author extends User {
         this.writtenBooks = writtenBooks;
     }
 
-    public LocalDateTime getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDateTime dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }

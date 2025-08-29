@@ -8,20 +8,31 @@ public class User {
     private String firstName;
     private String lastName;
     private String username;
-    private List<Book> books;
+    private String password;
 
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(username, user.username) && Objects.equals(books, user.books);
+        return Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(books, user.books);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, username, books);
+        return Objects.hash(firstName, lastName, username, password, books);
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private List<Book> books;
+
 
     public String getFirstName() {
         return firstName;

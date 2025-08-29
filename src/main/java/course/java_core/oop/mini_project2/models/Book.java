@@ -3,6 +3,7 @@ package course.java_core.oop.mini_project2.models;
 import course.java_core.oop.mini_project2.models.enums.BookStatus;
 import course.java_core.oop.mini_project2.models.enums.Genre;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -14,10 +15,10 @@ public class Book {
     private double price;
     private Genre genre;
     private BookStatus status;
-    private LocalDateTime writtenAt;
+    private LocalDate writtenAt;
 
 
-    public Book(String title, String description, Author author, double price, Genre genre, BookStatus status, LocalDateTime writtenAt) {
+    public Book(String title, String description, Author author, double price, Genre genre, BookStatus status, LocalDate writtenAt) {
         this.title = title;
         this.description = description;
         this.author = author;
@@ -103,11 +104,11 @@ public class Book {
         this.status = status;
     }
 
-    public LocalDateTime getWrittenAt() {
+    public LocalDate getWrittenAt() {
         return writtenAt;
     }
 
-    public void setWrittenAt(LocalDateTime writtenAt) {
+    public void setWrittenAt(LocalDate writtenAt) {
         this.writtenAt = writtenAt;
     }
 }

@@ -2,11 +2,14 @@ package course.java_core.oop.mini_project2.services.user_services;
 
 
 import course.java_core.oop.mini_project2.db.LibraryDB;
+import course.java_core.oop.mini_project2.models.Author;
 import course.java_core.oop.mini_project2.models.Book;
+import course.java_core.oop.mini_project2.services.security_services.LoginService;
+import course.java_core.oop.mini_project2.services.security_services.RegisterService;
 
 import java.util.Optional;
 
-public final class AuthorService extends UserService {
+public final class AuthorService extends UserService implements LoginService<Author>, RegisterService<Author> {
 
 
 
@@ -24,5 +27,21 @@ public final class AuthorService extends UserService {
     }
 
 
+    @Override
+    public boolean login(String username, String password) {
+        return LibraryDB.authors.stream().filter(author -> author.getUsername().equals(username) && author.getPassword().equals(password))
+                .findFirst().get() != null ? true : false;
+    }
 
+    @Override
+    public boolean register(Author author) {
+        if (author == null){
+            System.err.println("Запис автора не валідний.");
+            return false;
+        }
+        else {
+            LibraryDB.authors.add(author);
+            return true;
+        }
+    }
 }
