@@ -6,11 +6,10 @@ import course.java_core.oop.mini_project2.models.Book;
 
 import java.util.List;
 
-public class BookService {
+public final class BookService {
 
     public void addBook(Book book){
         if(!book.equals(null)){
-
             LibraryDB.books.add(book);
         }
         else {
@@ -45,6 +44,10 @@ public class BookService {
 
     public List<Book> getBooksByAuthor(Author author){
         return LibraryDB.books.stream().filter(book -> book.getAuthor().equals(author)).toList();
+    }
+
+    public List<Book> getAllBooks(){
+        return LibraryDB.books;
     }
 
 }

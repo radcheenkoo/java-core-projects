@@ -1,11 +1,9 @@
 package course.java_core.oop.mini_project2.services.managers;
 
-import course.java_core.oop.mini_project2.db.LibraryDB;
 import course.java_core.oop.mini_project2.models.Author;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Optional;
 import java.util.Scanner;
 
 public interface AuthorAuthorizationAndAuthenticationManager {

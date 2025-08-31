@@ -34,23 +34,23 @@ public final class Customer extends User{
         return intendToRead;
     }
 
-    public void setIntendToRead(Book book) {
-        this.intendToRead.add(book);
+    public boolean setIntendToRead(Book book) {
+        return this.intendToRead.add(book);
     }
 
     public List<Book> getActiveRead() {
         return activeRead;
     }
 
-    public void setActiveRead(Book book) {
-        this.activeRead.add(book);
+    public boolean setActiveRead(Book book) {
+        return this.activeRead.add(book);
     }
 
     public List<Book> getDoneRead() {
         return doneRead;
     }
 
-    public void setDoneRead(Book book) {
-        this.doneRead.add(book);
+    public boolean setDoneRead(Book book) {
+        return this.doneRead.add(book);
     }
 }

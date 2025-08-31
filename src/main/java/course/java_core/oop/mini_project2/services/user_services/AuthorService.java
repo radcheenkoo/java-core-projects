@@ -28,20 +28,20 @@ public final class AuthorService extends UserService implements LoginService<Aut
 
 
     @Override
-    public boolean login(String username, String password) {
+    public Author login(String username, String password) {
         return LibraryDB.authors.stream().filter(author -> author.getUsername().equals(username) && author.getPassword().equals(password))
-                .findFirst().get() != null ? true : false;
+                .findFirst().get();
     }
 
     @Override
-    public boolean register(Author author) {
+    public Author register(Author author) {
         if (author == null){
             System.err.println("Запис автора не валідний.");
-            return false;
+            return author;
         }
         else {
             LibraryDB.authors.add(author);
-            return true;
+            return author;
         }
     }
 }
